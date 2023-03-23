@@ -12,15 +12,11 @@ import java.util.List;
 @RequestMapping("/api/v1/users")
 public class UserController {
 
-    @GetMapping
-    public List<String> findAllUsers() {
-        return List.of(
-                "Dyllan",
-                "Cardoso",
-                "dyllan@gmail.com",
-                20,
-                "Basic"
+    private UserService service;
 
-        );
+    @GetMapping
+    public List<User> findAllUsers() {
+        return null;
+
     }
 }
