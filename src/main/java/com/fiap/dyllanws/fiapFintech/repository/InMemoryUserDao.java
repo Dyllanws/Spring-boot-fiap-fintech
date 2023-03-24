@@ -1,5 +1,6 @@
-package com.fiap.dyllanws.fiapFintech.user;
+package com.fiap.dyllanws.fiapFintech.repository;
 
+import com.fiap.dyllanws.fiapFintech.entity.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

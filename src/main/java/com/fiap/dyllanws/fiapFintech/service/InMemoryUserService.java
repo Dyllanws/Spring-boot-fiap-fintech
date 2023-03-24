@@ -1,10 +1,12 @@
-package com.fiap.dyllanws.fiapFintech.user;
+package com.fiap.dyllanws.fiapFintech.service;
 
+import com.fiap.dyllanws.fiapFintech.repository.InMemoryUserDao;
+import com.fiap.dyllanws.fiapFintech.entity.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service("im")
 public class InMemoryUserService implements UserService {
 
     private final InMemoryUserDao dao;

@@ -1,22 +1,36 @@
-package com.fiap.dyllanws.fiapFintech.user;
+package com.fiap.dyllanws.fiapFintech.entity;
+
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.Period;
 
+@Entity
+@Table(name = "person")
 public class User {
+
+    @Id
+    @GeneratedValue
+    private Integer id;
     private String firstName;
 
     private String lastName;
 
+    @Column(unique = true)
     private String email;
 
     private LocalDate birth;
 
+    @Transient
     private Integer age;
 
     private String plan;
 
+    private String passWord;
+
     public User() {
     }
+
 
     public User(
             String firstName,
@@ -24,13 +38,23 @@ public class User {
             String email,
             LocalDate birth,
             Integer age,
-            String plan) {
+            String plan,
+            String passWord) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.birth = birth;
         this.age = age;
         this.plan = plan;
+        this.passWord = passWord;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -66,7 +90,7 @@ public class User {
     }
 
     public Integer getAge() {
-        return age;
+        return Period.between(birth, LocalDate.now()).getYears();
     }
 
     public void setAge(Integer age) {
@@ -79,6 +103,14 @@ public class User {
 
     public void setPlan(String plan) {
         this.plan = plan;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 }
 

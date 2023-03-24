@@ -1,7 +1,9 @@
-package com.fiap.dyllanws.fiapFintech.user;
+package com.fiap.dyllanws.fiapFintech.controller;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.fiap.dyllanws.fiapFintech.entity.User;
+import com.fiap.dyllanws.fiapFintech.service.UserService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,7 +15,7 @@ public class UserController {
     private final UserService service;
 
 
-    public UserController(UserService service) {
+    public UserController( @Qualifier("db") UserService service) {
         this.service = service;
     }
 

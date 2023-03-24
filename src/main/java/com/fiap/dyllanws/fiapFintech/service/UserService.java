@@ -1,5 +1,6 @@
-package com.fiap.dyllanws.fiapFintech.user;
-import java.time.LocalDate;
+package com.fiap.dyllanws.fiapFintech.service;
+import com.fiap.dyllanws.fiapFintech.entity.User;
+
 import java.util.List;
 
 
